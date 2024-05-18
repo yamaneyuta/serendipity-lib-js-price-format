@@ -2,7 +2,7 @@
   "name": "@yamaneyuta/serendipity-lib-js-price-convert",
   "version": "0.8.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "devDependencies": {
     "typescript": "^5.4.5"
