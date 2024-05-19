@@ -2,8 +2,10 @@
   "name": "@yamaneyuta/serendipity-lib-js-price-format",
   "version": "0.8.0",
   "scripts": {
+    "prebuild": "npm run clean",
     "build": "tsc",
     "ci:build": "tsc -p tsconfig.ci.json",
+    "clean": "rm -rf dist",
     "prepare": "npm run build",
     "test": "jest",
     "watch": "tsc -w -p tsconfig.ci.json"
