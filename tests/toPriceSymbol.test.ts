@@ -3,22 +3,25 @@ import { toPriceSymbol } from "../src/functions/toPriceSymbol";
 test.each`
     symbol    | locales    | expected
     ${"JPY"}  | ${undefined} | ${"¥"}
-    ${"USD"}  | ${undefined} | ${"$"}
-    ${"EUR"}  | ${undefined} | ${"€"}
-    ${"ETH"}  | ${undefined} | ${"ETH"}
-    ${"USDC"} | ${undefined} | ${"USDC"}
-    
+    ${"JPY"}  | ${"en-US"} | ${"¥"}
     ${"JPY"}  | ${"ja-JP"} | ${"￥"}
+
+    ${"USD"}  | ${undefined} | ${"$"}
+    ${"USD"}  | ${"en-US"} | ${"$"}
     ${"USD"}  | ${"ja-JP"} | ${"$"}
+
+    ${"EUR"}  | ${undefined} | ${"€"}
+    ${"EUR"}  | ${"en-US"} | ${"€"}
     ${"EUR"}  | ${"ja-JP"} | ${"€"}
+
+    ${"ETH"}  | ${undefined} | ${"ETH"}
+    ${"ETH"}  | ${"en-US"} | ${"ETH"}
     ${"ETH"}  | ${"ja-JP"} | ${"ETH"}
+
+    ${"USDC"} | ${undefined} | ${"USDC"}
+    ${"USDC"} | ${"en-US"} | ${"USDC"}
     ${"USDC"} | ${"ja-JP"} | ${"USDC"}
 
-    ${"JPY"}  | ${"en-US"} | ${"¥"}
-    ${"USD"}  | ${"en-US"} | ${"$"}
-    ${"EUR"}  | ${"en-US"} | ${"€"}
-    ${"ETH"}  | ${"en-US"} | ${"ETH"}
-    ${"USDC"} | ${"en-US"} | ${"USDC"}
 `('getDecimalSeparator($locales) === $expected', ({ symbol, locales, expected }) => {
     expect(toPriceSymbol(symbol, locales)).toBe(expected);
 });
