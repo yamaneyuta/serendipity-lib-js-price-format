@@ -5,7 +5,8 @@
     "build": "tsc",
     "ci:build": "tsc -p tsconfig.ci.json",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "watch": "tsc -w -p tsconfig.ci.json"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
