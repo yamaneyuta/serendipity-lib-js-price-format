@@ -3,6 +3,7 @@
   "version": "0.8.0",
   "scripts": {
     "build": "tsc",
+    "ci:build": "tsc -p tsconfig.ci.json",
     "prepare": "npm run build",
     "test": "jest"
   },
