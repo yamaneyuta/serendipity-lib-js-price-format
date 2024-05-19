@@ -3,10 +3,14 @@
   "version": "0.8.0",
   "scripts": {
     "build": "tsc",
-    "prepare": "cp -f ./node_modules/@yamaneyuta/serendipity-dev-conf/docker/Dockerfile-node ./.devcontainer/Dockerfile-node"
+    "prepare": "cp -f ./node_modules/@yamaneyuta/serendipity-dev-conf/docker/Dockerfile-node ./.devcontainer/Dockerfile-node",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "@yamaneyuta/serendipity-dev-conf": "github:yamaneyuta/serendipity-dev-conf",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.4.5"
   }
 }
