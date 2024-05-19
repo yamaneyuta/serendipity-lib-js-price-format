@@ -25,6 +25,8 @@ test.each`
     ${"es"}    | ${","}
     ${"ru-RU"} | ${","}
     ${"ru"}    | ${","}
+
+    ${undefined}| ${"."}
 `('getDecimalSeparator($locales) === $expected', ({ locales, expected }) => {
     expect(getDecimalSeparator(locales)).toBe(expected);
 });
