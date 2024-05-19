@@ -1,5 +1,5 @@
 {
-  "name": "@yamaneyuta/serendipity-lib-js-price-convert",
+  "name": "@yamaneyuta/serendipity-lib-js-price-format",
   "version": "0.8.0",
   "scripts": {
     "build": "tsc",
