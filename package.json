@@ -6,6 +6,7 @@
     "build": "tsc",
     "ci:build": "tsc -p tsconfig.ci.json",
     "clean": "rm -rf dist",
+    "coverage": "jest --coverage",
     "prepare": "npm run build",
     "test": "jest",
     "watch": "tsc -w -p tsconfig.ci.json"
