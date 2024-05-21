@@ -8,7 +8,7 @@
     "clean": "rm -rf dist",
     "coverage": "jest --coverage",
     "format": "prettier --write src tests",
-    "lint": "prettier --check src tests",
+    "lint": "eslint src tests && prettier --check src tests",
     "prepare": "npm run build",
     "test": "jest",
     "watch": "tsc -w -p tsconfig.ci.json"
