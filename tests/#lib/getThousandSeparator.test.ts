@@ -31,3 +31,18 @@ test.each`
 		expect( actual ).toBe( expected );
 	}
 } );
+
+// Intl.NumberFormat::formatToParts関数の戻り値が想定外の場合のテスト
+test( 'fail safe', () => {
+	jest.spyOn( Intl, 'NumberFormat' ).mockImplementation( ( locales?: any, options?: any ) => {
+		return {
+			formatToParts: () => [],
+		} as any;
+	} );
+
+	// コンソールエラーで何も出力しない設定
+	jest.spyOn( console, 'error' ).mockImplementation();
+
+	// 小数点の文字列が見つからない場合は、デフォルト値として `,` を返す
+	expect( getThousandSeparator() ).toBe( ',' );
+} );
