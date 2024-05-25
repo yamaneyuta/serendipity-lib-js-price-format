@@ -7,7 +7,7 @@
     "ci:build": "tsc -p tsconfig.ci.json",
     "clean": "rm -rf dist",
     "coverage": "jest --coverage",
-    "format": "prettier --write src tests",
+    "format": "eslint --fix src tests && prettier --write src tests",
     "lint": "eslint src tests && prettier --check src tests",
     "prepare": "npm run build",
     "test": "jest",
