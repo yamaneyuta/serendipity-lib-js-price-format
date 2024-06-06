@@ -1,6 +1,14 @@
 {
   "name": "@yamaneyuta/serendipity-lib-js-price-format",
   "version": "0.8.0",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prebuild": "npm run clean",
     "build": "tsc",
