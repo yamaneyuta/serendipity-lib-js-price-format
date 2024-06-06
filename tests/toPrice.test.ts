@@ -1,5 +1,5 @@
 import { toPrice } from '../src/functions/toPrice';
-import { getThousandSeparator } from './#lib/getThousandSeparator';
+import { getThousandSeparator } from './lib/getThousandSeparator';
 import { getLiteral } from '../src/functions/getLiteral';
 
 const FR_TS = getThousandSeparator( 'fr-FR' );
