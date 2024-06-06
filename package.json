@@ -1,6 +1,7 @@
 {
   "name": "@yamaneyuta/serendipity-lib-js-price-format",
   "version": "1.0.0",
+  "private": true,
   "exports": {
     ".": {
       "import": "./dist/index.js"
