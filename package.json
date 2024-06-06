@@ -15,7 +15,7 @@
     "_update:devcontainer": "dev-update devcontainer",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "ci:build": "tsc -p tsconfig.ci.json",
+    "ci:build": "tsc --skipLibCheck false",
     "clean": "rm -rf dist",
     "coverage": "jest --coverage",
     "format": "eslint --fix src tests && prettier --write src tests",
