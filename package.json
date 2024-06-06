@@ -10,6 +10,7 @@
     "dist"
   ],
   "scripts": {
+    "_update:package": "rm -rf node_modules package-lock.json ; npm i",
     "prebuild": "npm run clean",
     "build": "tsc",
     "ci:build": "tsc -p tsconfig.ci.json",
