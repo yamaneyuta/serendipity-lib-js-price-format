@@ -29,6 +29,6 @@
     "@yamaneyuta/serendipity-dev-conf": "github:yamaneyuta/serendipity-dev-conf",
     "jest": "^29.7.0",
     "prettier": "npm:wp-prettier@^3.0.3",
-    "ts-jest": "^29.1.2"
+    "ts-jest": "^29.1.5"
   }
 }
