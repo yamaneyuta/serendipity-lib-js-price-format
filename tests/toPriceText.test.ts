@@ -1,4 +1,4 @@
-import { toPrice } from '../src/functions/toPrice';
+import { toPriceText } from '../src/functions/toPriceText';
 import { getThousandSeparator } from './lib/getThousandSeparator';
 import { getLiteral } from '../src/functions/getLiteral';
 
@@ -30,7 +30,7 @@ test.each`
 `(
 	'toPrice($amount, $decimals, $symbol, $locales) === $expected',
 	( { amount, decimals, symbol, locales, expected } ) => {
-		expect( normalizePrice( toPrice( amount, decimals, symbol, locales ) ) ).toBe( expected );
+		expect( normalizePrice( toPriceText( amount, decimals, symbol, locales ) ) ).toBe( expected );
 	}
 );
 
@@ -144,16 +144,16 @@ test.each`
 `(
 	'toPrice($amount, $decimals, $symbol, $locales) === $expected',
 	( { amount, decimals, symbol, locales, expected } ) => {
-		expect( normalizePrice( toPrice( amount, decimals, symbol, locales ) ) ).toBe( expected );
+		expect( normalizePrice( toPriceText( amount, decimals, symbol, locales ) ) ).toBe( expected );
 	}
 );
 
 // amount が負の数の場合
 test( 'toPrice(-1, 0, "ETH") throws RangeError', () => {
-	expect( () => toPrice( -1, 0, 'ETH' ) ).toThrow( RangeError );
+	expect( () => toPriceText( -1, 0, 'ETH' ) ).toThrow( RangeError );
 } );
 
 // decimals が負の数の場合
 test( 'toPrice(1, -1, "ETH") throws RangeError', () => {
-	expect( () => toPrice( 1, -1, 'ETH' ) ).toThrow( RangeError );
+	expect( () => toPriceText( 1, -1, 'ETH' ) ).toThrow( RangeError );
 } );

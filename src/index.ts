@@ -1,1 +1,1 @@
-export * from './functions/toPrice';
+export * from './functions/toPriceText';

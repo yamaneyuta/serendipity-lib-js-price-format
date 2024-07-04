@@ -12,7 +12,7 @@
  * @param symbol
  * @param locales
  */
-export const toPriceSymbol = ( symbol: string, locales?: Intl.LocalesArgument ): string => {
+export const convertToPriceSymbol = ( symbol: string, locales?: Intl.LocalesArgument ): string => {
 	try {
 		const parts = Intl.NumberFormat( locales, { style: 'currency', currency: symbol } ).formatToParts( 1 );
 

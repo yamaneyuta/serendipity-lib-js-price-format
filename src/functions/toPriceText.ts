@@ -1,5 +1,5 @@
 import { isLegalCurrency } from './isLegalCurrency';
-import { toPriceSymbol } from './toPriceSymbol';
+import { convertToPriceSymbol } from './convertToPriceSymbol';
 import { getDecimalSeparator } from './getDecimalSeparator';
 import { getLiteral } from './getLiteral';
 
@@ -10,7 +10,7 @@ import { getLiteral } from './getLiteral';
  * @param symbol
  * @param locales
  */
-export const toPrice = (
+export const toPriceText = (
 	amount: bigint | number,
 	decimals: number,
 	symbol: string | undefined,
@@ -44,7 +44,7 @@ export const toPrice = (
 	// 整数部分にカンマ区切り等を入れる(例: `1,234,567,890`)
 	const integerPartWithThousandSeparator = Intl.NumberFormat( locales, { style: 'currency', currency: 'USD' } )
 		.format( BigInt( integerPart ) )
-		.replace( toPriceSymbol( 'USD', locales ), '' )
+		.replace( convertToPriceSymbol( 'USD', locales ), '' )
 		.trim()
 		.split( getDecimalSeparator( locales ) )[ 0 ]; // 1USD => $1.00となるため、小数点以下は削除
 
