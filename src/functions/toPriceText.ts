@@ -2,6 +2,7 @@ import { isLegalCurrency } from './isLegalCurrency';
 import { convertToPriceSymbol } from './convertToPriceSymbol';
 import { getDecimalSeparator } from './getDecimalSeparator';
 import { getLiteral } from './getLiteral';
+import { splitPart } from './splitPart';
 
 /**
  * 価格(文字列)を返します。
@@ -35,11 +36,8 @@ export const toPriceText = (
 
 	// 以下、法定通貨以外(暗号資産等)の場合の処理
 
-	// 整数部分と小数点以下を数値だけの文字列で取得(例: `123456789`)
-	const tmp = '0'.repeat( decimals ) + amount.toString();
-	let integerPart = decimals === 0 ? tmp : tmp.slice( 0, -decimals ).replace( /^0+/, '' );
-	const decimalPart = decimals === 0 ? '' : tmp.slice( -decimals ).replace( /0+$/, '' );
-	integerPart = integerPart === '' ? '0' : integerPart; // 整数部分が空の場合は`0`を代入
+	// 整数部分と小数点以下を数値だけの文字列で取得
+	const { integerPart, decimalPart } = splitPart( amount, decimals );
 
 	// 整数部分にカンマ区切り等を入れる(例: `1,234,567,890`)
 	const integerPartWithThousandSeparator = Intl.NumberFormat( locales, { style: 'currency', currency: 'USD' } )
