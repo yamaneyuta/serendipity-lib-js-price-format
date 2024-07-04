@@ -9,7 +9,7 @@ import { getDecimalSeparator } from './getDecimalSeparator';
  * @param decimals
  * @param locales
  */
-export const toInputPriceValueText = ( amount: bigint | number, decimals: number, locales?: Intl.LocalesArgument ) => {
+export const amountToInputValue = ( amount: bigint | number, decimals: number, locales?: Intl.LocalesArgument ) => {
 	const { integerPart, decimalPart } = splitPart( amount, decimals );
 
 	if ( decimalPart === '' ) {

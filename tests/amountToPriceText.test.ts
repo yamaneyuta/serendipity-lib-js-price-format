@@ -1,4 +1,4 @@
-import { toPriceText } from '../src/functions/toPriceText';
+import { toPriceText } from '../src/functions/amountToPriceText';
 import { getThousandSeparator } from './lib/getThousandSeparator';
 import { getLiteral } from '../src/functions/getLiteral';
 

@@ -1,4 +1,4 @@
-import { convertToPriceSymbol } from '../src/functions/convertToPriceSymbol';
+import { convertToPriceSymbol } from '../src/functions/convertPriceSymbol';
 
 test.each`
 	symbol      | locales        | expected

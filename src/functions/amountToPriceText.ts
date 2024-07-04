@@ -1,5 +1,5 @@
 import { isLegalCurrency } from './isLegalCurrency';
-import { convertToPriceSymbol } from './convertToPriceSymbol';
+import { convertToPriceSymbol } from './convertPriceSymbol';
 import { getDecimalSeparator } from './getDecimalSeparator';
 import { getLiteral } from './getLiteral';
 import { splitPart } from './splitPart';
