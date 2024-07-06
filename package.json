@@ -1,6 +1,6 @@
 {
   "name": "@yamaneyuta/serendipity-lib-js-price-format",
-  "version": "1.0.0",
+  "version": "0.8.0",
   "private": true,
   "exports": {
     ".": {
