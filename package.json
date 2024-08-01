@@ -20,6 +20,7 @@
     "lint": "eslint src tests && prettier --check src tests",
     "prepare": "npm run build",
     "test": "jest",
+    "update:package": "npx npm-check-updates -u --target minor",
     "watch": "tsc -w -p tsconfig.ci.json"
   },
   "devDependencies": {
