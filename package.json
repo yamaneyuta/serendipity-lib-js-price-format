@@ -19,6 +19,7 @@
     "format": "eslint --fix src tests && prettier --write src tests",
     "lint": "eslint src tests && prettier --check src tests",
     "prepare": "npm run build",
+    "release": "npx release-it",
     "test": "jest",
     "update:package": "npx npm-check-updates -u --target minor",
     "watch": "tsc -w -p tsconfig.ci.json"
