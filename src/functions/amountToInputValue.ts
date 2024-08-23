@@ -9,8 +9,12 @@ import { getDecimalSeparator } from './getDecimalSeparator';
  * @param decimals
  * @param locales
  */
-export const amountToInputValue = ( amount: bigint | number, decimals: number, locales?: Intl.LocalesArgument ) => {
-	const { integerPart, decimalPart } = splitPart( amount, decimals );
+export const amountToInputValue = (
+	amount: bigint | number | string,
+	decimals: number,
+	locales?: Intl.LocalesArgument
+) => {
+	const { integerPart, decimalPart } = splitPart( BigInt( amount ), decimals );
 
 	if ( decimalPart === '' ) {
 		return integerPart;
