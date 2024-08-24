@@ -4,7 +4,14 @@
   "private": true,
   "exports": {
     ".": {
-      "import": "./dist/index.js"
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.js",
+        "default": "./dist/cjs/index.js"
+      }
     }
   },
   "files": [
@@ -12,8 +19,10 @@
   ],
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "tsc",
-    "ci:build": "tsc --skipLibCheck false",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "build:esm": "tsc -p ./tsconfig.esm.json",
+    "ci:build": "tsc --skipLibCheck false -p ./tsconfig.esm.json",
     "clean": "rm -rf dist",
     "coverage": "jest --coverage",
     "format": "eslint --fix src tests && prettier --write src tests",
@@ -22,7 +31,7 @@
     "release": "npx release-it",
     "test": "jest",
     "update:package": "npx npm-check-updates -u --target minor",
-    "watch": "tsc -w -p tsconfig.ci.json"
+    "watch": "tsc -w -p tsconfig.esm.json"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
