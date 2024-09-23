@@ -1,4 +1,4 @@
-import { amountToInputValue } from '../src/functions/amountToInputValue';
+import { amountToInputValue } from '../src/functions/toValueText';
 
 test.each`
 	amount        | decimals | locales        | expected
