@@ -1,3 +1,3 @@
-export * from './functions/amountToPriceText';
-export * from './functions/amountToInputValue';
-export * from './functions/inputValueToAmount';
+export * from './functions/toPriceText';
+export * from './functions/toValueText';
+export * from './functions/toAmount';

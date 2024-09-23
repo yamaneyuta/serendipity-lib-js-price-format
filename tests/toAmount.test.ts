@@ -1,4 +1,4 @@
-import { inputValueToAmount } from '../src/functions/inputValueToAmount';
+import { toAmount } from '../src/functions/toAmount';
 
 test.each`
 	value             | expectedAmount | expectedDecimals
@@ -19,9 +19,9 @@ test.each`
 	${ '.123000' }    | ${ '123' }     | ${ 3 }
 	${ ',123000' }    | ${ '123' }     | ${ 3 }
 `(
-	'inputValueToAmount($value) === { amount: $expectedAmount, decimals: $expectedDecimals }',
+	'toAmount($value) === { amount: $expectedAmount, decimals: $expectedDecimals }',
 	( { value, expectedAmount, expectedDecimals } ) => {
-		const { amount, decimals } = inputValueToAmount( value );
+		const { amount, decimals } = toAmount( value );
 
 		expect( amount.toString() ).toBe( expectedAmount );
 		expect( decimals ).toBe( expectedDecimals );
@@ -35,8 +35,8 @@ test.each`
 	${ '1,2.3' }
 	${ '1.2,3' }
 	${ '1,2,3' }
-`( 'inputValueToAmount($value) throws an error', ( { value } ) => {
-	expect( () => inputValueToAmount( value ) ).toThrow( 'Invalid input value.' );
+`( 'toAmount($value) throws an error', ( { value } ) => {
+	expect( () => toAmount( value ) ).toThrow( 'Invalid input value.' );
 } );
 
 /*

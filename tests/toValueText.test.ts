@@ -1,4 +1,4 @@
-import { amountToInputValue } from '../src/functions/amountToInputValue';
+import { toValueText } from '../src/functions/toValueText';
 
 test.each`
 	amount        | decimals | locales        | expected
@@ -23,9 +23,6 @@ test.each`
 	${ '0x04d2' } | ${ 2 }   | ${ 'ja-JP' }   | ${ '12.34' }
 	${ '0x04d2' } | ${ 2 }   | ${ 'fr-FR' }   | ${ '12,34' }
 	${ '0x04d2' } | ${ 2 }   | ${ 'de-DE' }   | ${ '12,34' }
-`(
-	'amountToInputValue($amount, $decimals, $symbol, $locales) === $expected',
-	( { amount, decimals, locales, expected } ) => {
-		expect( amountToInputValue( amount, decimals, locales ) ).toBe( expected );
-	}
-);
+`( 'toValueText($amount, $decimals, $symbol, $locales) === $expected', ( { amount, decimals, locales, expected } ) => {
+	expect( toValueText( amount, decimals, locales ) ).toBe( expected );
+} );
