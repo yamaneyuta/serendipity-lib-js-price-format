@@ -36,6 +36,9 @@ test.each`
 
 test.each`
 	case                             | amount           | decimals | symbol         | locales        | expected
+	${ 'HEX' }                       | ${ '0x0' }       | ${ 0 }   | ${ 'ETH' }     | ${ undefined } | ${ '0 ETH' }
+	${ '' }                          | ${ '0x1' }       | ${ 0 }   | ${ 'ETH' }     | ${ undefined } | ${ '1 ETH' }
+	${ '' }                          | ${ '0x1' }       | ${ 1 }   | ${ 'ETH' }     | ${ undefined } | ${ '0.1 ETH' }
 	${ 'ゼロ' }                      | ${ 0n }          | ${ 0 }   | ${ 'ETH' }     | ${ undefined } | ${ '0 ETH' }
 	${ '  - decimlasもゼロ' }        | ${ 0n }          | ${ 0 }   | ${ 'ETH' }     | ${ 'en-US' }   | ${ '0 ETH' }
 	${ '' }                          | ${ 0n }          | ${ 0 }   | ${ 'ETH' }     | ${ 'ja-JP' }   | ${ '0 ETH' }
