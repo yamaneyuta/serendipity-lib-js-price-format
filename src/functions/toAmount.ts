@@ -2,8 +2,8 @@
  * HTMLのinput要素の入力テキストを、金額と小数点以下の桁数に変換します。
  * @param value
  */
-export const inputValueToAmount = ( value: string ): { amount: bigint; decimals: number } => {
-	let { amount, decimals } = _inputValueToAmount( value );
+export const toAmount = ( value: string ): { amount: bigint; decimals: number } => {
+	let { amount, decimals } = _toAmount( value );
 
 	// 小数点以下の数字が0で終わっている場合は、その0を削除する
 	while ( decimals > 0 && amount % 10n === 0n ) {
@@ -14,7 +14,7 @@ export const inputValueToAmount = ( value: string ): { amount: bigint; decimals:
 	return { amount, decimals };
 };
 
-const _inputValueToAmount = ( value: string ): { amount: bigint; decimals: number } => {
+const _toAmount = ( value: string ): { amount: bigint; decimals: number } => {
 	// 数値が連続する部分を取り出す(1つまたは2つが取得できるはず)
 	const numbers = value.match( /\d+/g );
 
