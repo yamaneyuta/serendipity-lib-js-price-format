@@ -12,11 +12,12 @@ import { splitPart } from './splitPart';
  * @param locales
  */
 export const toPriceText = (
-	amount: bigint | number,
+	amount: bigint | number | string,
 	decimals: number,
 	symbol: string | undefined,
 	locales?: Intl.LocalesArgument
 ) => {
+	amount = BigInt( amount );
 	// 引数チェック
 	if ( amount < 0 ) {
 		throw new RangeError( "'amount' must be a non-negative integer" );
